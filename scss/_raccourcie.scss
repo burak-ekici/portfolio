@@ -1,0 +1,17 @@
+%divCardH4{
+    div{
+        h4{
+            color:white;
+            font-size:4rem;
+            margin-top:400px;
+            font-family: $goldman;
+            text-shadow:2px 2px 5px rgba(0,0,0,0.7)
+        }
+    }
+}
+
+
+%cardsglobal{
+    cursor:pointer;
+    transition: 0.5s ease;
+}

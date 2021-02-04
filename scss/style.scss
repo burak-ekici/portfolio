@@ -1,0 +1,807 @@
+@import "reset";
+@import "variables";
+@import "keyframes";
+@import "raccourcie";
+@import "mixins";
+
+html {
+  font-size: 62.5%;
+  body {
+    background-color: #fff;
+    font-size: 1.7rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+
+    header {
+      display: flex;
+      flex-grow: column nowrap;
+      justify-content: space-around;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      align-items: center;
+      overflow: hidden;
+      background: $couleur;
+      box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+      height: 4rem;
+      
+
+      .header_div1 {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        height: 4rem;
+        
+        
+
+        .fa-bars {
+          color: white;
+          margin-left: 1.5rem;
+          font-size: 3rem;
+          margin-top: 1rem;
+          display:block;
+          width:44px;
+          &.displayNone {
+            display: none;
+          }
+         
+        }
+        .fa-times {
+          color: white;
+          margin-left: 1.5rem;
+          font-size: 3rem;
+          margin-top: 1.5rem;
+          display:block;
+          width:44px;
+          &.displayNone {
+            display: none;
+          }
+          
+        }
+
+        nav {
+          width: 80%;
+          font-size: 2rem;
+          justify-content: center;
+          line-height: 1.7rem;
+          margin: 0 auto;
+          display: flex;
+          @include laptopM {
+            height: 6rem;
+            text-align: center;
+            height: 3rem;
+            font-size: 1.5rem;
+          }
+          @include laptopS {
+            line-height: 1rem;
+          }
+          @include tablette{
+            width:60%;
+          }
+          @include mobileM{
+            width:60%;
+          }
+
+          .icon-burger {
+            display: none;
+          }
+
+          ul {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+
+            li {
+              margin: 0 50px;
+              @include laptopS {
+                margin: 0 30px;
+                line-height: 1.5rem;
+              }
+            }
+
+            li a {
+              color: #fff;
+              text-decoration: none;
+              font-weight: 700;
+              font-family: $montserrat;
+
+              &:hover {
+                color: rgba(255, 255, 255, 0.6);
+                transition: color 0.1s;
+                font-size: 2, 5rem;
+              }
+            }
+          }
+        }
+
+        .nav-burger {
+          display: none;
+          background: $couleur;
+          // display:flex;
+          justify-content: space-between;
+          width: 60%;
+
+          ul {
+            display: flex;
+            flex-flow: column nowrap;
+            height: 90vh;
+
+            li {
+              line-height: 2.5rem;
+            }
+
+            li a {
+              display: flex;
+              align-items:center;
+              padding: 15px;
+              text-decoration: none;
+              font-size: 2rem;
+              width: auto;
+              height: 22px;
+              margin-bottom: 6rem;
+              line-height:4rem;
+            }
+          }
+
+          .icon-burger {
+            display: block;
+            a {
+              display: inline-block;
+              padding: 15px;
+              text-decoration: none;
+              .fa-envelope {
+                color: #222;
+                font-size: 4rem;
+                position:relative;
+                left:-2rem;
+                
+              }
+              .fa-youtube {
+                color: #222;
+                font-size: 4rem;
+                position:relative;
+              }
+              .fa-facebook-square {
+                color: #222;
+                font-size: 4rem;
+                position:relative;
+              }
+            }
+          }
+        }
+
+        .toggle-btn {
+          width: 44px;
+          height: 24px;
+          border-radius: 15px;
+          background: #fff;
+          margin-right: 0.5rem;
+          padding: 2px;
+          box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 1);
+          
+          
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          .on-off {
+            width: 20px;
+            height: 20px;
+            background: gray;
+            border-radius: 50%;
+            transition: all 300ms ease-in-out;
+          }
+
+          &.active {
+            background: #006b96;
+
+            .on-off {
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      height: auto;
+      box-sizing: border-box;
+      font-family: $roboto;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 2.5rem;
+      color: #4c5353;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+
+      .logo {
+        background: url("../img/101593.jpg");
+        background-size: cover;
+        background-position: bottom;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include tablette {
+          height: 85vh;
+        }
+        @include mobileL {
+          height: 85vh;
+        }
+
+        #titre-principal {
+          position: relative;
+          font-size: 9rem;
+          color: #fff;
+          font-family: $montserrat;
+          text-shadow: #000000 0.5rem 0px 0.5rem;
+          top: -100px;
+          @include laptopS {
+            font-size: 7rem;
+          }
+          @include tablette {
+            font-size: 4rem;
+            margin-top: 8rem;
+          }
+          @include mobileL {
+            font-size: 3rem;
+          }
+          @include mobileM {
+            font-size: 2.9rem;
+          }
+          @include mobileS {
+            font-size: 2.5rem;
+          }
+        }
+
+        .clouds {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          pointer-events: none;
+
+          img {
+            position: absolute;
+            bottom: 0;
+            max-width: 90%;
+            animation: animate calc(3s * var(--i)) linear infinite;
+          }
+        }
+      }
+      h3 {
+        color: black;
+        font-size: 4rem;
+        display: block;
+        text-align: center;
+        position: relative;
+        margin-bottom: 5rem;
+        width: 100%;
+        height: 50px;
+        @include laptopS {
+          margin-bottom: 0rem;
+        }
+        @include mobileL {
+          margin-bottom: 4rem;
+        }
+      }
+      .partieDeux {
+        display: grid;
+        grid: "definition sol"/ 1fr 1fr;
+        margin-bottom: 70px;
+        @include laptopM {
+          line-height: 3.3rem;
+          height: auto;
+        }
+        @include tablette {
+          display: flex;
+          flex-flow: row wrap;
+        }
+
+        .definition {
+          padding: 0 7rem;
+          padding-top: 3rem;
+          grid-area: "definition";
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: space-between;
+          border-right: 1px solid #cacaca;
+          @include laptopM {
+            padding: 0 5rem;
+          }
+          @include tablette {
+            width: 100%;
+            margin-bottom: 5rem;
+            padding: 0 3rem;
+          }
+          h3 {
+            @include laptopS {
+              margin-bottom: 7rem;
+              font-size: 3.3rem;
+            }
+          }
+
+          p {
+            margin-top: 2rem;
+            text-align: center;
+            display: block;
+            width: 100%;
+            justify-self: flex-start;
+            height: 200px;
+            @include laptopM {
+              height: auto;
+              margin-bottom: 3rem;
+            }
+          }
+
+          button {
+            font-size: 1.5rem;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+
+        .natureDuSol {
+          padding: 0 7rem;
+          padding-top: 3rem;
+          grid-area: "sol";
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: space-between;
+          @include laptopM {
+            padding: 0 5rem;
+          }
+          @include tablette {
+            width: 100%;
+            padding: 0 3rem;
+          }
+
+          h3 {
+            color: black;
+            font-size: 4rem;
+            display: block;
+            text-align: center;
+            position: relative;
+            margin-bottom: 5rem;
+            width: 100%;
+            height: 50px;
+            @include laptopS {
+              font-size: 3.3rem;
+            }
+          }
+
+          p {
+            margin-top: 2rem;
+            text-align: center;
+            display: block;
+            width: 100%;
+            height: 200px;
+            justify-self: flex-start;
+            @include laptopM {
+              height: auto;
+              margin-bottom: 3rem;
+            }
+          }
+
+          button {
+            font-size: 1.5rem;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      .cards {
+        border: 0;
+        font-family: $roboto;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 0 10rem;
+        @include laptopM {
+          padding: 5rem 5rem;
+        }
+        @include laptopS {
+          padding: 0rem 5rem;
+        }
+        @include tablette {
+          padding: 0 2rem;
+        }
+
+        h3 {
+          color: black;
+          font-size: 4rem;
+          display: block;
+          text-align: center;
+          width: 100%;
+          margin-bottom: 70px;
+        }
+        .blured {
+          filter: blur(3px);
+          opacity: 0.7;
+        }
+
+        .card {
+          &-ete {
+            display: block;
+            width: 20%;
+            height: 500px;
+            text-align: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+            border-radius: 18px;
+            background: url("../img/pretty-woman-1509956_1920.jpg");
+            background-size: cover;
+            background-position: 40%;
+            @extend %divCardH4;
+            @extend %cardsglobal;
+            @include laptopM {
+              div h4 {
+                font-size: 3rem;
+              }
+            }
+            @include laptopS {
+              div h4 {
+                font-size: 2rem;
+              }
+            }
+            @include tablette {
+              width: 48%;
+              height: auto;
+              margin-bottom: 2rem;
+              div h4 {
+                font-size: 3rem;
+                padding-bottom: 2rem;
+              }
+            }
+            @include mobileL {
+              width: 100%;
+              div h4 {
+                font-size: 5rem;
+                margin-bottom: 2rem;
+              }
+            }
+          }
+          &-hiver {
+            display: block;
+            width: 20%;
+            height: 500px;
+            text-align: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+            border-radius: 18px;
+            background: url("../img/winter.jpg");
+            background-size: cover;
+            background-position: 75% 75%;
+            @extend %divCardH4;
+            @extend %cardsglobal;
+            @include laptopM {
+              div h4 {
+                font-size: 3rem;
+              }
+            }
+            @include laptopS {
+              div h4 {
+                font-size: 2rem;
+              }
+            }
+            @include tablette {
+              width: 48%;
+              height: auto;
+              margin-bottom: 10rem;
+              div h4 {
+                font-size: 3rem;
+                padding-bottom: 2rem;
+              }
+            }
+            @include mobileL {
+              width: 100%;
+              margin-bottom: 2rem;
+              div h4 {
+                font-size: 5rem;
+                margin-bottom: 2rem;
+              }
+            }
+          }
+          &-automne {
+            display: block;
+            width: 20%;
+            height: 500px;
+            text-align: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+            border-radius: 18px;
+            background: url("../img/automne.jpg");
+            background-size: cover;
+            @extend %divCardH4;
+            @extend %cardsglobal;
+            @include laptopM {
+              div h4 {
+                font-size: 3rem;
+              }
+            }
+            @include laptopS {
+              div h4 {
+                font-size: 2rem;
+              }
+            }
+            @include tablette {
+              width: 48%;
+              height: auto;
+              margin-bottom: 2rem;
+              div h4 {
+                font-size: 3rem;
+                padding-bottom: 2rem;
+              }
+            }
+            @include mobileL {
+              width: 100%;
+              div h4 {
+                font-size: 5rem;
+                margin-bottom: 2rem;
+              }
+            }
+          }
+          &-printemp {
+            display: block;
+            width: 20%;
+            height: 500px;
+            text-align: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+            border-radius: 18px;
+            background: url("../img/printemp3.jpg");
+            background-size: cover;
+            background-position: 100% 0%;
+            @extend %divCardH4;
+            @extend %cardsglobal;
+            margin-bottom: 70px;
+            @include laptopM {
+              div h4 {
+                font-size: 3rem;
+              }
+            }
+            @include laptopS {
+              div h4 {
+                font-size: 2rem;
+              }
+            }
+            @include tablette {
+              width: 48%;
+              height: auto;
+              margin-bottom: 10rem;
+              div h4 {
+                font-size: 3rem;
+                padding-bottom: 2rem;
+              }
+            }
+            @include mobileL {
+              width: 100%;
+              div h4 {
+                font-size: 5rem;
+                margin-bottom: 2rem;
+              }
+            }
+          }
+        }
+      }
+
+      .video {
+        display: flex;
+        padding: 5rem 10rem;
+        @include laptopM {
+          padding: 5rem 5rem;
+        }
+        @include laptopS {
+          padding: 0rem 5rem 3rem 5rem;
+        }
+        @include tablette {
+          flex-flow: row wrap;
+        }
+        @include mobileL {
+          padding: 0 2rem 3rem 2rem;
+        }
+        .paragraphe {
+          display: block;
+          width: 50%;
+          padding: 0 2rem;
+          line-height: 3rem;
+          text-align: center;
+          @include laptopM {
+            font-size: 1.7rem;
+          }
+          @include laptopS {
+            line-height: 2rem;
+          }
+          @include tablette {
+            width: 100%;
+            line-height: 2.5rem;
+            padding: 0 0rem;
+          }
+
+          .geoff {
+            float: right;
+            margin-top: 20px;
+            font-size: 1.5rem;
+          }
+        }
+        iframe {
+          display: block;
+          width: 50%;
+          border-radius: 10px;
+          @include laptopM {
+            height: 40rem;
+          }
+          @include laptopS {
+            height: 35rem;
+            border-radius: 5px;
+          }
+          @include tablette {
+            width: 100%;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+
+    footer {
+      position: relative;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      height: 25rem;
+      @include laptopS {
+        height: 10rem;
+      }
+      width: 100%;
+      background: $couleur;
+      box-shadow: 0px -3px 7px 0px rgba(0, 0, 0, 0.9);
+      font-size: 1.6rem;
+      align-items: center;
+      overflow: hidden;
+      p {
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-shadow: #000000 0.2rem 0px 0.5rem;
+        @include tablette{
+          font-size:1rem;
+        }
+        @include mobileL{
+          font-size:0.8rem;
+        }
+      }
+      ul{
+          position:relative;
+          display:flex;
+          width:100%;
+          justify-content: center;
+          
+      }
+
+      ul li{
+          position:relative;
+          list-style:none;
+          display:flex;
+          flex-flow: row nowrap;
+          justify-content:center;
+          width:10%;
+          text-decoration: none;
+
+          a{
+              text-decoration: none;
+              display:flex;
+              align-items: center;
+              font-size:6rem;
+              color:#222;
+              text-decoration: none;
+
+              &:hover{
+                  text-decoration: none;
+              }
+
+              i{
+
+              &:hover{
+                  color:#222}
+              }
+              
+              @include tablette{
+                  font-size: 3rem;;
+              }
+          }
+
+          &:nth-child(2)::before{
+              content:"\f082";
+              color: #1877f2;
+              border-bottom:4px solid #1877f2;
+          }
+          &:hover::before{
+              height:100%;
+          }
+          &::before{
+              font-family: fontAwesome;;
+              position: absolute;
+              display:flex;
+              justify-content: center;
+              align-items: center;
+              font-size:6rem;
+              height:0;
+              overflow: hidden;
+              transition:0.2s linear;
+              margin-top:2px;
+              
+          }
+          &:nth-child(1)::before{
+              content:"\f0e0";
+              font-family: "Font Awesome 5 Free";
+              font-weight:900;
+              color: rgb(243, 247, 7);
+              border-bottom:4px solid rgb(243, 247, 7);
+              font-size: 6.1rem;
+              z-index:3;
+              @include tablette{
+                  display:none
+              }
+          }
+          &:nth-child(2)::before{
+              content:"\f082";
+              color: #1877f2;
+              border-bottom:4px solid #1877f2;
+              font-size: 6.1rem;
+              z-index:3;
+              @include tablette{
+                  display:none
+              }
+          }
+          &:nth-child(3)::before{
+              content:"\f167";
+              color: #ee0000;
+              border-bottom:4px solid #ee0000;
+              font-size: 6.2rem;
+              z-index:3;
+              @include tablette{
+                  display:none
+              }
+          }
+
+          
+          
+
+          
+      }
+
+      ol{
+            
+        display:flex;
+        width:50%;
+        justify-content: space-around;
+        @include laptopS{
+          width:65%
+      }
+      @include tablette{
+          width:90%;
+          font-size:1rem;
+      }
+        li{
+          
+          a{
+            text-decoration: none;
+            color:black;
+            
+          }
+        }
+      }
+
+      
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@mixin quatreK{
+    @media(min-width:1441px){
+        @content
+    }
+};
+
+@mixin laptopL{
+    @media(min-width:1440px ){
+        @content
+    }
+};
+
+@mixin laptopM {
+    @media (max-width : 1400px){
+        @content
+    }
+};
+
+@mixin laptopS{
+    @media (max-width : 1000px){
+        @content
+    }
+};
+
+@mixin tablette{
+    @media(max-width : 771px){
+        @content
+    }
+};
+
+@mixin mobileL{
+    @media(max-width:426px){
+        @content
+    }
+};
+
+@mixin mobileM{
+    @media(max-width:376px){
+        @content
+    }
+};
+
+@mixin mobileS{
+    @media(max-width:321px){
+        @content
+    }
+};
+
